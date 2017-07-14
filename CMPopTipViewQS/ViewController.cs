@@ -88,6 +88,27 @@ namespace CMPopTipViewQS
             _ColorSchemes = schemes.Select( (arg) => new ColorScheme(arg.Item1, arg.Item2)).ToArray();
         }
 
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
+            if (_NeedUpdate) {
+                _NeedUpdate = false;
+				foreach (CMPopTipView popTipView in _VisiblePopTipViews)
+				{
+					var targetObject = popTipView.TargetObject;
+					popTipView.DismissAnimated(false);
+					if (targetObject is UIButton button)
+					{
+						popTipView.PresentPointingAtView(button, View, false);
+					}
+					else if (targetObject is UIBarButtonItem item)
+					{
+						popTipView.PresentPointingAtBarButtonItem(item, false);
+					}
+				}
+            }
+        }
+
 
         public override void DidReceiveMemoryWarning()
         {
@@ -201,37 +222,18 @@ namespace CMPopTipViewQS
             _CurrentPopTipViewTarget = null;
         }
 
+        bool _NeedUpdate = false;
         public override void WillTransitionToTraitCollection(UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
         {
             base.WillTransitionToTraitCollection(traitCollection, coordinator);
-			foreach (CMPopTipView popTipView in _VisiblePopTipViews) {
-			    var targetObject = popTipView.TargetObject;
-			    popTipView.DismissAnimated(false);
-			    if (targetObject is UIButton button) {
-			        popTipView.PresentPointingAtView(button, View, false);
-			    }
-			    else if (targetObject is UIBarButtonItem item) {
-			        popTipView.PresentPointingAtBarButtonItem(item, false);
-			    }
-			}
+            _NeedUpdate = true;
 		}
 
         public override void ViewWillTransitionToSize(CGSize toSize, IUIViewControllerTransitionCoordinator coordinator)
         {
             base.ViewWillTransitionToSize(toSize, coordinator);
-			foreach (CMPopTipView popTipView in _VisiblePopTipViews)
-			{
-				var targetObject = popTipView.TargetObject;
-				popTipView.DismissAnimated(false);
-				if (targetObject is UIButton button)
-				{
-					popTipView.PresentPointingAtView(button, View, false);
-				}
-				else if (targetObject is UIBarButtonItem item)
-				{
-					popTipView.PresentPointingAtBarButtonItem(item, false);
-				}
-			}
+            _NeedUpdate = true;
         }
+
     }
 }

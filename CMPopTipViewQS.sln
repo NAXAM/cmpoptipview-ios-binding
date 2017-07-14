@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMPopTipViewQS", "CMPopTipV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naxam.CMPopTipView.iOS", "Naxam.CMPopTipView.iOS\Naxam.CMPopTipView.iOS.csproj", "{120081BB-9FB1-4993-BE9D-DDDC4E12163C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{C2115B13-BFE9-435A-9727-B641A2F09812}"
+	ProjectSection(SolutionItems) = preProject
+		poptip.nuspec = poptip.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator

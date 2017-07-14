@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{9450F1FA-6A6C-4660-81D6-DBEEAF6A12C4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="poptip.nuspec">
+    <Files>
+      <File FileName="CMPopTipViewQS/AppDelegate.cs" Line="1" Column="1" />
+      <File FileName="Naxam.CMPopTipView.iOS/ApiDefinition.cs" Line="86" Column="16" />
+      <File FileName="CMPopTipViewQS/ViewController.cs" Line="115" Column="41" />
+      <File FileName="poptip.nuspec" Line="4" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CMPopTipViewQS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6891D1EA-CF1C-4AE8-A15B-9780CA872BCD" />
+  <MultiItemStartupConfigurations />
+</Properties>
